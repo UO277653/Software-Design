@@ -1,0 +1,45 @@
+
+# Detección de Figuras
+
+## Cuadrado
+
+1. Dado un CUADRADO, se quiere sabier si se ha pinchado dentro de él.
+a) El Cuadrado está definido por:
+    - Esquina superior izquierda: "Point esquina;"
+    - Ancho y alto del mismo: "int ancho, alto;"
+b) La coordenada donde se ha pinchado el ratón: "int x,y".
+
+El código que me dice si se ha pinchado dentro de la figura es:
+``` java
+boolean pinchado = (esquina.x <= x && x <= esquina.x + ancho) && (esquina.y <= y && y <= esquina.y + alto);
+```
+
+
+## Cículo
+
+Dado un CÍRCULO, se quiere sabier si se ha pinchado dentro de él.
+a) El Círculo está definido por:
+    - Centro del círculo: "Point centro;"
+    - Radio: "int radio;"
+b) La coordenada donde se ha pinchado el ratón: "int x,y".
+
+El código que me dice si se ha pinchado dentro de la figura es:
+``` java
+double distancia = Math.sqrt(Math.pow(x - centro.x, 2) + Math.pow(y - centro.y, 2));
+boolean pinchado = distancia < radio;
+```
+
+
+## Triángulo
+
+Dado un TRÁNGULO, se quiere sabier si se ha pinchado dentro de él.
+a) El Tríágulo está definido por tres vértices: "Point v1, v2, v3;".
+    - Centro del círculo: "Point centro;"
+    - Radio: "int radio;"
+b) La coordenada donde se ha pinchado el ratón: "int x,y".
+
+El código que me dice si se ha pinchado dentro de la figura es:
+``` java
+Point posicion = new Point(x,y);
+boolean pinchado = posicion.equals(v1) || posicion.equals(v2) || posicion.equals(v3);
+```

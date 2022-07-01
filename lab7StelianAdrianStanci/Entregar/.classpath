@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="1. Inicio. vsc/src"/>
+	<classpathentry kind="src" path="2. Mejora inicial. vsc/src"/>
+	<classpathentry kind="output" path="1. Inicio. vsc/bin"/>
+</classpath>

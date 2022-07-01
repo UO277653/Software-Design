@@ -1,0 +1,9 @@
+{
+    "java.dependency.packagePresentation": "flat",
+    "files.exclude": {
+        ".project": true,
+        ".classpath": true,
+        ".vscode": true,
+        "bin": true
+    }
+}

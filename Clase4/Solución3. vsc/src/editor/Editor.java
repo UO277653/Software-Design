@@ -1,0 +1,59 @@
+package editor;
+
+import editor.herramientas.*;
+
+public class Editor {
+
+    public Editor(Dibujo dibujo) {
+        setDibujo(dibujo);
+        actual = principal = createDefaultTool();
+    }
+
+    protected Herramienta createDefaultTool() {
+        return new HerramientaSeleccion(this);
+    }
+
+    public void setDibujo(Dibujo dibujo) {
+        this.dibujo = dibujo;
+    }
+
+    public Dibujo getDibujo() {
+        return dibujo;
+    }
+
+    public void dibujar() {
+        // Dibujar barra de Herramientas
+        // Dibujar barra de estado...
+        System.out.println("Botón activo: " + actual);
+        dibujo.dibuja();
+    }
+
+    public Herramienta getDefaultTool() {
+        return principal;
+    }
+
+    public void setHerramienta(Herramienta herramienta) {
+        if (herramienta != null)
+            this.actual = herramienta;
+    }
+
+    public void pinchar(int x, int y) {
+        actual.pinchar(x, y);
+    }
+
+    public void mover(int x, int y) {
+        actual.mover(x, y);
+    }
+
+    public void soltar(int x, int y) {
+        actual.soltar(x, y);
+    }
+
+    public void finHerramienta() {
+        actual = principal;
+    }
+
+    private Dibujo dibujo;
+    private Herramienta actual;
+    private Herramienta principal;
+}
